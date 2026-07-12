@@ -1,0 +1,22 @@
+# soksak-kit-terminal-conformance — build-time facade for soksak-contract-terminal.
+# The contract owns the corpus, declared reference states, and acceptance assertions. This kit
+# exposes that interface to engine-unit tests and retains an Alacritty renderer for diagnostics.
+[package]
+name = "soksak-kit-terminal-conformance"
+version = "0.0.1"
+edition = "2021"
+publish = false
+description = "Build-time facade for the terminal contract's declared-state conformance interface."
+
+[lib]
+name = "soksak_kit_terminal_conformance"
+path = "src/lib.rs"
+
+[dependencies]
+# Diagnostic renderer only. It is not a conformance authority; the contract's declared reference
+# states are. Apache-2.0; the attribution ships in THIRD-PARTY-NOTICES.
+alacritty_terminal = "0.26"
+soksak-contract-terminal = { git = "https://github.com/soksak-ai/soksak-contract-terminal", rev = "e2d60b034148fdf6b43637bba41e9a068515c0a8" }
+
+# Independent workspace — the kit sits beside the units, not inside a unit's workspace.
+[workspace]
