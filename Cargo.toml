@@ -3,8 +3,8 @@
 # exposes that interface to engine-unit tests and retains an Alacritty renderer for diagnostics.
 [package]
 name = "soksak-kit-terminal-conformance"
-version = "0.0.1"
-edition = "2021"
+version = "0.0.2"
+edition = "2024"
 publish = false
 description = "Build-time facade for the terminal contract's declared-state conformance interface."
 
