@@ -14,7 +14,8 @@ pub use judge::{CellSnap, ColorSnap, MIRROR_SCROLLBACK_LINES, ModeSnap, Screen};
 pub use soksak_contract_terminal::reference_state;
 pub use soksak_contract_terminal::{
     Attrs, Cell, Color, CursorShape, CursorStyle, Fixture, MirrorUnderTest, Modes, Row,
-    ScreenState, assert_conforms, assert_cursor_style_conforms, assert_resize_reflow,
+    ScreenState, assert_conforms, assert_cursor_style_conforms, assert_mode_report_restores,
+    assert_resize_reflow,
 };
 
 /// Runs the contract-owned cases against an engine unit's mirror.
@@ -70,6 +71,11 @@ macro_rules! conformance_suite {
         #[test]
         fn resize_reflow_preserves_canonical_state() {
             $crate::assert_resize_reflow::<$mirror>();
+        }
+
+        #[test]
+        fn a_recorded_mode_report_restores_the_modes() {
+            $crate::assert_mode_report_restores::<$mirror>();
         }
     };
 }
