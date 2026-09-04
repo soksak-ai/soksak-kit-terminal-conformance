@@ -16,7 +16,7 @@ path = "src/lib.rs"
 # Diagnostic renderer only. It is not a conformance authority; the contract's declared reference
 # states are. Apache-2.0; the attribution ships in THIRD-PARTY-NOTICES.
 alacritty_terminal = "0.26"
-soksak-contract-terminal = { git = "https://github.com/soksak-ai/soksak-contract-terminal", rev = "d0b5e4375cf833ea61431079866b518d0e24c416" }
+soksak-contract-terminal = { git = "https://github.com/soksak-ai/soksak-contract-terminal", rev = "4acb6bc296332daac35cf58c3a846c3b18748301" }
 
 # Independent workspace — the kit sits beside the units, not inside a unit's workspace.
 [workspace]
